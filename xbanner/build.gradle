@@ -18,6 +18,7 @@ android {
 dependencies {
     //noinspection GradleDynamicVersion
     compileOnly 'com.android.support:support-v4:28+'
+    compileOnly 'com.github.xiaohalbin:Encrypt:+'
 }
 ///方法1
 def siteUrl = 'https://github.com/xiaohaibin/XBanner'      // 项目的主页   这个是说明，可随便填

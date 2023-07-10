@@ -1,9 +1,9 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
-apply plugin: 'com.jfrog.bintray'
+apply plugin: 'maven-publish' // 打包 library
 
 //提交到仓库中的版本号
-version = "1.6.4"
+version = "1.7.4"
 
 android {
     compileSdkVersion 28
@@ -77,19 +77,19 @@ artifacts {
 
 Properties properties = new Properties()
 properties.load(project.rootProject.file('local.properties').newDataInputStream())
-bintray {
-    user = properties.getProperty("bintray.user")    //读取 local.properties 文件里面的 bintray.user
-    key = properties.getProperty("bintray.apikey")   //读取 local.properties 文件里面的 bintray.apikey
-    configurations = ['archives']
-    pkg {
-        repo = "maven"
-        name = "XBanner"    //发布到JCenter上的项目名字，必须填写
-        websiteUrl = siteUrl
-        vcsUrl = gitUrl
-        licenses = ["Apache-2.0"]
-        publish = true
-    }
-}
+//bintray {
+//    user = properties.getProperty("bintray.user")    //读取 local.properties 文件里面的 bintray.user
+//    key = properties.getProperty("bintray.apikey")   //读取 local.properties 文件里面的 bintray.apikey
+//    configurations = ['archives']
+//    pkg {
+//        repo = "maven"
+//        name = "XBanner"    //发布到JCenter上的项目名字，必须填写
+//        websiteUrl = siteUrl
+//        vcsUrl = gitUrl
+//        licenses = ["Apache-2.0"]
+//        publish = true
+//    }
+//}
 
 //这段代码一会给你们解释哈
 javadoc {
